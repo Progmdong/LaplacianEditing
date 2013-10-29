@@ -54,9 +54,9 @@ for i=1:n
     t = [Ainv(5,:)
             Ainv(6,:)
             Ainv(7,:)];
-    Tdelta = [s*delta_ix-h(3,:)*delta_iy+h(2,:)*delta_iz
-                    h(3,:)*delta_ix+s*delta_iy-h(1,:)*delta_iz
-                    (-1)*h(2,:)*delta_ix+h(1,:)*delta_iy+s*delta_iz];
+    Tdelta = [s*delta_ix-h(3,:)*delta_iy+h(2,:)*delta_iz+t(1,:)
+                    h(3,:)*delta_ix+s*delta_iy-h(1,:)*delta_iz+t(2,:)
+                    (-1)*h(2,:)*delta_ix+h(1,:)*delta_iy+s*delta_iz+t(3,:)];
     
     %Updating the weights in Lx_prime,Ly_prime,Lw_prime
     L_prime(i,[ring (ring+n) (ring+2*n)]) = (-1)*L_prime(i,[ring (ring+n) (ring+2*n)])+...
