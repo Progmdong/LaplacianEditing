@@ -39,15 +39,27 @@ for i=1:n
     
     Ainv = pinv(A);
     s = Ainv(1,:);
+<<<<<<< HEAD
     h1 = Ainv(2,:);
     h2 = Ainv(3,:);
     h3 = Ainv(4,:);
-   % t = [Ainv(5,:)
-    %       Ainv(6,:)
-    %       Ainv(7,:)];
+    t = [Ainv(5,:)
+           Ainv(6,:)
+           Ainv(7,:)];
     Tdelta = [s*delta_ix-h3*delta_iy+h2*delta_iz
                     h3*delta_ix+s*delta_iy-h1*delta_iz
                     (-1)*h2*delta_ix+h1*delta_iy+s*delta_iz];
+=======
+    h = [Ainv(2,:)
+            Ainv(3,:)
+            Ainv(4,:)];
+    t = [Ainv(5,:)
+            Ainv(6,:)
+            Ainv(7,:)];
+    Tdelta = [s*delta_ix-h(3,:)*delta_iy+h(2,:)*delta_iz+t(1,:)
+                    h(3,:)*delta_ix+s*delta_iy-h(1,:)*delta_iz+t(2,:)
+                    (-1)*h(2,:)*delta_ix+h(1,:)*delta_iy+s*delta_iz+t(3,:)];
+>>>>>>> 209abae5958b113eac9a416b00320a90dfaeceb7
     
     %Updating the weights in Lx_prime,Ly_prime,Lz_prime
     rN2N = [ring ring+n ring+2*n];
